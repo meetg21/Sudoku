@@ -19,7 +19,7 @@ int  grid[N][N] = { { 3, 0, 6, 5, 0, 8, 4, 0, 0 },
 
 void sudoku_input()
 { int num;
-		cout<<"Enter numbers Starting from left to right-> and then one down "<<endl;
+		cout<<"Enter numbers Starting from left to right,one below the other "<<endl;
 				cout<<"Enter '0' wherever balnk "<<endl;
 				for(int i=0;i<9;i++)
 				{
@@ -35,7 +35,6 @@ void change_num()
 { int A,B,C,x;
 	cout<<"How many Numbers u wanna Change"<<endl;
 				cin>>x;
-				cout<<"Row/Column no. starts from 0 and ends at 8"<<endl;
 				for(int i =x;i>0;i--){
 				
 					cout<<"Enter row :"<<endl;
@@ -44,7 +43,7 @@ void change_num()
 					cin>>B;
 					cout<<"Enter number : "<<endl;
 					cin>>C;
-					grid[A][B]=C;
+					grid[A-1][B-1]=C;
 }}
 void print(int arr[N][N])
 {
@@ -128,7 +127,7 @@ int A,B,C,n,x,num;
   print(grid);		
   cout<<"1.Enter your own sudoku puzzle. "<<endl;
   cout<<"2.Change a particukar no. from the puzzle."<<endl;
-  cout<<"3.Check sudoku puzzle "<<endl;
+  cout<<"3.Display Puzzle. "<<endl;
   cout<<"4.Get answer"<<endl;
 
 while(1){
@@ -153,7 +152,7 @@ while(1){
 						print(grid);
 					}
 					else
-					cout<<"Their aint a solution for this ,Please check ur question again :)"<<endl;
+					cout<<"There isn't a solution ,Please check your puzzle again :)"<<endl;
 					break;
 		}	
 		}
